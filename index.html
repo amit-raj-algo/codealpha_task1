@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1 class="title">Enhanced Image Gallery</h1>
+
+  <!-- Filters -->
+  <div class="controls">
+    <div class="filter-buttons">
+      <button onclick="filterImages('all')">All</button>
+      <button onclick="filterImages('nature')">Nature</button>
+      <button onclick="filterImages('architecture')">Architecture</button>
+      <button onclick="filterImages('Temple')">Temple</button>
+      <button onclick="filterImages('DreamHouse')">DreamHouse</button>
+    </div>
+    <input type="text" id="searchInput" oninput="searchImages()" placeholder="Search by filename..." />
+  </div>
+
+  <!-- Gallery -->
+  <div class="gallery" id="gallery">
+    <img src="https://thumbs.dreamstime.com/b/celebrating-mother-earth-day-imagine-surreal-scene-where-colorful-radiant-enveloped-lush-nature-pristine-air-water-355597121.jpg" data-category="nature" alt="nature1" onclick="openLightbox(this)" />
+    <img src="https://t4.ftcdn.net/jpg/06/04/05/27/360_F_604052707_AfDPv7xO3aDaFaWY0QepLbJD4DnhfUR1.jpg" data-category="nature" alt="nature2" onclick="openLightbox(this)" />
+    <img src="https://t4.ftcdn.net/jpg/05/27/33/71/240_F_527337139_hGaAjvS5gWMuafyf0kk2wnK9qP0JHvwh.jpg" data-category="nature" alt="nature2" onclick="openLightbox(this)" />
+    <img src="https://t4.ftcdn.net/jpg/02/31/69/05/360_F_231690594_1xpuGVGkzsPIvIVRyRkGLY5Ze11d3yev.jpg" data-category="architecture" alt="architecture1" onclick="openLightbox(this)" />
+    <img src="https://pinnacleiit.com/wp-content/uploads/2024/01/fi-9.webp" data-category="architecture" alt="architecture1" onclick="openLightbox(this)" />
+    <img src="https://media.istockphoto.com/id/1164386039/photo/howrah-bridge-on-river-ganges-at-kolkata-at-twilight-with-moody-sky.jpg?s=612x612&w=0&k=20&c=CHrNWdInFSDyERdvgd0f8935hZcBQU6lbYCE4LlXqUY=" data-category="architecture" alt="architecture2" onclick="openLightbox(this)" />
+    <img src="https://www.namasteindiatrip.com/blog/wp-content/uploads/2018/07/Ram-Janmabhoomi-Temple-Ayodhya.jpg" data-category="Temple" alt="Temple2" onclick="openLightbox(this)" />
+    <img src="https://thumbs.dreamstime.com/b/prem-mandir-vrindavan-lit-temple-divine-love-prem-mandir-lit-temple-divine-love-hindu-temple-vrindavan-170357866.jpg" data-category="Temple" alt="Temple2" onclick="openLightbox(this)" />
+    <img src="https://images.herzindagi.info/image/2018/Mar/vaishno-devi-temple-history.jpg" data-category="Temple" alt="Temple2" onclick="openLightbox(this)" />
+    <img src="https://i.pinimg.com/736x/b1/d6/7d/b1d67d71de66c8a7262fa1e5a15a4c70.jpg" data-category="Temple" alt="Temple2" onclick="openLightbox(this)" />
+    <img src="https://i.ytimg.com/vi/x3kKesCOza0/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgSyg_MA8=&rs=AOn4CLABieQkQ-u2fvOda79BlhX19lFS1A" data-category="DreamHouse" alt="DreamHouse1" onclick="openLightbox(this)" />
+    <img src="https://i.ytimg.com/vi/fNQzyOXawR8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCes2XRiLS7Q35pjFGeCu88QKYFiA" data-category="DreamHouse" alt="DreamHouse1" onclick="openLightbox(this)" />
+    <img src="https://static.vecteezy.com/system/resources/previews/030/963/092/large_2x/model-of-a-modern-house-flat-on-the-background-of-trees-mixed-media-generative-ai-photo.jpg" data-category="DreamHouse" alt="DreamHouse1" onclick="openLightbox(this)" />
+    <img src="https://static.vecteezy.com/system/resources/previews/028/184/319/non_2x/top-down-aerial-drone-view-of-modern-house-the-pools-and-rooftops-appear-to-be-colored-generative-ai-photo.jpg" data-category="DreamHouse" alt="DreamHouse1" onclick="openLightbox(this)" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIBPMYLpVJ-7fnpC32nzggrrzVhvURMhBSqw&s" data-category="car" alt="car2" onclick="openLightbox(this)" />
+    <img src="https://cdn.businessday.ng/wp-content/uploads/2025/03/Rolls-Royce-Boat-Tail.png" data-category="car" alt="car2" onclick="openLightbox(this)" />
+    <img src="https://cdn.luxe.digital/media/20230103133034/most-expensive-cars-2023-mclaren-solus-luxe-digital-780x520.jpg" data-category="car" alt="car2" onclick="openLightbox(this)" />
+    <!-- Add more images here -->
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="toggleZoom(event)">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" />
+    <div class="nav">
+      <button onclick="changeImage(-1)">❮</button>
+      <button onclick="changeImage(1)">❯</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
